@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.path.join(BASE_DIR, 'db.postgresql'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'x.x.x.x',
-        'PORT': '',
+        #'NAME': os.path.join(BASE_DIR, 'db.postgresql'),
+        #'USER': '',
+        #'PASSWORD': '',
+        #'HOST': 'x.x.x.x',
+        #'PORT': '',
     }
 }
 
@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Brussels'
 
 USE_I18N = True
 
