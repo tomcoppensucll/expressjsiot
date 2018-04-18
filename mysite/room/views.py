@@ -3,4 +3,4 @@ from  django.template import loader
 from django.shortcuts import render
 
 def index(request):
-	return render(request, 'templates/polls/index.html')
+	return render(request, 'room/index.html')
