@@ -23,25 +23,14 @@
 
       <h3>De lokalen</h3>
       <p>De lokalen van op de UCLL campus te Haasrode</p>
-
+		{% for item in query_rooms %}
       <div class="row">
-        <div class="col-4">Lokaal D000</div>
-        <div class="col-4">Gereserveerd</div>
-        <div class="col-4" style="background-color:red"></div>
+        <div class="col-4">Lokaal {{ item.lokaal}}</div>
+        <div class="col-4"> {{ item.status}}</div>
+        <div class="col-4" {% if  item.status == "vrij"  %} style="background-color:green"{% else %} style="background-color:red"{% endif %}>  </div>
       </div> 
-
-      <div class="row">
-        <div class="col-4">Lokaal D001</div>
-        <div class="col-4">Gereserveerd</div>
-        <div class="col-4" style="background-color:red"></div>
-      </div> 
-
-      <div class="row">
-        <div class="col-4">Lokaal D002</div>
-        <div class="col-4">Beschikbaar</div>
-        <div class="col-4" style="background-color:green"></div>
-      </div> 
-      
+	{% endfor %}
+       
     </div> <!-- /container -->
   </body>
 </html>
