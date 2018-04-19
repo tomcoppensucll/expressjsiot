@@ -77,6 +77,9 @@ WSGI_APPLICATION = 'roomsite.wsgi.application'
 DATABASES = {
    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'OPTIONS' : {
+                'options': '-c search_path=Reservatieschema,public'
+            },
         'NAME': 'roomReservations',
         'USER': 'postgres',
         'PASSWORD': '',
