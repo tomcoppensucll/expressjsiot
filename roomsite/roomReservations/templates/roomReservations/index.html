@@ -1,38 +1,29 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv = "refresh" content="5"/>
-
-
-    <title>Reservatiekamer bezetting</title
-	
-	
-	<!--{% load staticfiles %}-->
-    <!-- Bootstrap core CSS -->
-	{% load static %}
-    <!-- Custom styles for this template -->
-	<link href="{% static 'roomReservations/bootstrap.css'%}" rel="stylesheet">
-    <link href="{% static 'roomReservations/grid.css'%}" rel="stylesheet">  </head>
- 
-  <body>
-    <div class="container">
-
-      <h1>Overzicht status lokalen</h1>
-      <p class="lead">Eenvoudig overzicht van de beschikbare lokalen.</p>
-
-      <h3>De lokalen</h3>
-      <p>De lokalen van op de UCLL campus te Haasrode</p>
-		{% for item in query_rooms %}
-      <div class="row">
-        <div class="col-4">Lokaal {{ item.lokaal}}</div>
-        <div class="col-4"> {{ item.status}}</div>
-        <div class="col-4" {% if  item.status == "vrij"  %} style="background-color:green"{% else %} style="background-color:red"{% endif %}>  </div>
-      </div> 
-	{% endfor %}
-       
-    </div> <!-- /container -->
-  </body>
+		<title>Reservatiekamer bezetting</title>
+		<!-- Bootstrap core CSS -->
+		{% load static %}
+		<!-- Custom styles for this template -->
+		<link href="{% static 'roomReservations/bootstrap.css'%}" rel="stylesheet">
+		<link href="{% static 'roomReservations/grid.css'%}" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Overzicht status lokalen</h1>
+			<p class="lead">Eenvoudig overzicht van de beschikbare lokalen.</p>
+			<h3>De lokalen</h3>
+			<p>De lokalen van op de UCLL campus te Haasrode</p>
+			{% for item in query_rooms %}
+			<div class="row">
+				<div class="col-4">Lokaal {{ item.lokaal}}</div>
+				<div class="col-4"> {{ item.status}}</div>
+				<div class="col-4" {% if  item.status == "vrij"  %} style="background-color:green"{% else %} style="background-color:red"{% endif %}>  </div>
+			</div>
+			{% endfor %}
+		</div> <!-- /container -->
+	</body>
 </html>
